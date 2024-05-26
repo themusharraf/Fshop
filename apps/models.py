@@ -37,3 +37,12 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class AboutView(models.Model):
+    title = models.CharField(max_length=200)
+    staff = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='about')
+
+    def __str__(self):
+        return self.title

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, TemplateView, CreateView
-from .models import Featured, Products
+from .models import Featured, Products, AboutView
 from .forms import ContactForm
 
 
@@ -16,7 +16,9 @@ class FeaturedView(ListView):
     template_name = 'home.html'
 
 
-class AboutView(TemplateView):
+class AboutView(ListView):
+    model = AboutView
+    context_object_name = 'abouts'
     template_name = 'about.html'
 
 
